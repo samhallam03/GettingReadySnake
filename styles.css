@@ -1,0 +1,33 @@
+body {
+    background-color: navy;
+}
+
+h1 {
+  font-weight: bold;
+  font-family: 'Open Sans';
+  color: blue;
+  text-align: center;
+  text-shadow: 2px 2px 8px grey;
+}
+
+h2 {
+  font-weight: bold;
+  font-family: 'Open Sans';
+  color: grey;
+  text-shadow: 2px 2px 4px silver;
+  text-align: center;
+}
+
+.content {
+  background-color: white;
+  max-width: 800px;
+  min-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+#snakeCanvas {
+    width: 800px;
+    height: 600px;
+    background-color: silver;
+}
