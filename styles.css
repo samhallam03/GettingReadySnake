@@ -5,8 +5,8 @@ body {
 h1 {
   font-weight: bold;
   font-family: 'Open Sans';
+  font-size: 24pt;
   color: blue;
-  text-align: center;
   text-shadow: 2px 2px 8px grey;
 }
 
@@ -15,19 +15,19 @@ h2 {
   font-family: 'Open Sans';
   color: grey;
   text-shadow: 2px 2px 4px silver;
-  text-align: center;
 }
 
-.content {
+.pageContent {
   background-color: white;
-  max-width: 800px;
-  min-width: 800px;
+  max-width: 900px;
+  min-width: 900px;
   margin: auto;
   padding: 20px;
+  text-align: center;
 }
 
 #snakeCanvas {
     width: 800px;
     height: 600px;
-    background-color: silver;
+    background-color: lightGreen;
 }

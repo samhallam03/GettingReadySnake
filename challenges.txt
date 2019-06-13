@@ -1,0 +1,29 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           Computer Science A Level - Getting Ready Day 2019                  ┃
+┃                         JavaScript Snake Game                                ┃
+┃                      C H A L L E N G E   L I S T                             ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+CSS Challenges: (styles.css)
+
+• Change the primary heading font size to be 50pt.
+• Change the canvas background colour to be cyan instead of light green.
+• Change the canvas to be 250 pixels wide and 500 pixels high (what goes wrong?)
+
+JavaScript Challenges: (script.js)
+
+• Change the canvas max X and Y co-ordinates to match the new size.
+• Change the controls to be W, A, S, D. Visit http://keycode.info/ for help.
+• Change the start length of the snake to be 20 segments.
+• Increase the frequency of apples appearing to once every half second.
+• Increase the snake's movement speed (game frame rate) to 10 per second.
+• Change the grid size to be 10 pixels (why do the apple vanish!?)
+• Fix the problem of disappearing apples.
+
+Take home extension challenges:
+
+• Add a second simultaneous player
+• Make the canvas fill the whole web browser window and resize with it
+• Add mouse controls
+• Add walls (either random or a fixed pattern)
+• Change the plain coloured regtangles to be images, research 'canvas drawImage'
