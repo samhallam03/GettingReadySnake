@@ -1,3 +1,6 @@
+/*-------------------------------------------------------
+Constants and variables:
+------------------------------------------------------*/
 const GRID_SIZE = 25;      // The width of the grid's squares, in pixels
 const START_LENGTH = 5;    // Used to work out how many points you've gained
 const MAX_X = 800;         // This is the max X co-ordinate of the graphics canvas...
@@ -23,7 +26,7 @@ function pageLoad() {
     setInterval(updateSnake, 200);      // Schedule a snake update every 200ms (5 times per second)
     setInterval(addApple, 1000);        // Schedule a new apple to appear every second
 
-    document.addEventListener("keydown", checkKeyPress);        // Assign the function 'checkKeyPress'
+    document.addEventListener('keydown', checkKeyPress);        // Assign the function 'checkKeyPress'
                                                                 // to handle when a key is pressed.
 
     drawCanvas();                       // Draw the canvas (playing field) for the first time
@@ -38,10 +41,10 @@ function updateSnake() {
 
     if (snakeAlive) {     // Only process this code if the snake is alive.
 
-        if (snakeDirection === 'N') snakeHead.y--;      // North, move snake's head up
-        if (snakeDirection === 'E') snakeHead.x++;      // East, move snake's head left
-        if (snakeDirection === 'S') snakeHead.y++;      // South, move snake's head down
-        if (snakeDirection === 'W') snakeHead.x--;      // West, move snake's head right
+        if (snakeDirection == 'N') snakeHead.y--;       // North, move snake's head up
+        if (snakeDirection == 'E') snakeHead.x++;       // East, move snake's head left
+        if (snakeDirection == 'S') snakeHead.y++;       // South, move snake's head down
+        if (snakeDirection == 'W') snakeHead.x--;       // West, move snake's head right
 
         snakeAlreadyTurned = false;                     // Reset the 'double move' variable (see checkKeyPress function)
 
@@ -70,9 +73,9 @@ function updateSnake() {
             }                                                     // it drops the first item and shifts the list along one.)
 
             for (let apple of apples) {                // Check each of the apples...
-                if (apple.x === newSegment.x && apple.y === newSegment.y) {     // ... if the new segement has collided with an apple...
+                if (apple.x == newSegment.x && apple.y == newSegment.y) {       // ... if the new segement has collided with an apple...
                     snakeMaxLength++;                                           // ... then increase the snake's max length by one ...
-                    document.getElementById("score").innerHTML = snakeMaxLength - START_LENGTH;   // ... update the score ...
+                    document.getElementById('score').innerHTML = snakeMaxLength - START_LENGTH;   // ... update the score ...
                     apples = apples.filter(a => a !== apple);                   // ... remove this apple from the list of apples ...
                     break;                            // ... and terminate stop checking (you can only with one apple at a time!)
                 }
@@ -105,7 +108,7 @@ function drawCanvas() {
 
     for (let apple of apples) {             // We need to draw each of the apples, so for each apple in the apples list...
 
-        context.fillStyle = "green";        // ... set the drawing colour to be green
+        context.fillStyle = 'green';        // ... set the drawing colour to be green
         context.beginPath();                // ... begin drawing a shape
         context.rect(apple.x*GRID_SIZE + 5, apple.y*GRID_SIZE + 5, GRID_SIZE - 10, GRID_SIZE - 10);   // ... a rectangular path that is
         // 5 pixels in from the top left corner and 10 pixels less wide than the grid size - i.e. a 5 pixel margin all the way round.)
@@ -116,11 +119,11 @@ function drawCanvas() {
     for (let segment of snake) {              // Next, we need to draw each of the snake's body segments...
 
         if (snakeAlive) {
-            context.fillStyle = "purple";     // If the snake is alive, it will be purple
+            context.fillStyle = 'purple';     // If the snake is alive, it will be purple
         } else if (snake.length >= (MAX_X/GRID_SIZE)*(MAX_Y/GRID_SIZE)) {
-            context.fillStyle = "gold";       // If the snake fills the whole screen, it will be gold!
+            context.fillStyle = 'gold';       // If the snake fills the whole screen, it will be gold!
         } else {
-            context.fillStyle = "red";        // Otherwise, the snake must be dead so it will be red.
+            context.fillStyle = 'red';        // Otherwise, the snake must be dead so it will be red.
         }
 
         context.beginPath();                // Begin drawing a shape...
@@ -140,22 +143,22 @@ function checkKeyPress(event) {
     /* You can only change direction once per frame (this prevents you crashing into your own head!) */
     if (snakeAlreadyTurned) return;    // If you've already turned, return out of the function.
 
-    if ( event.key === "ArrowUp" ) {        // If you've pressed the up arrow...
+    if ( event.key == 'ArrowUp' ) {         // If you've pressed the up arrow...
         snakeDirection = 'N';               // ... change the snake's direction to N (for North)
         snakeAlreadyTurned = true;          // ... and prevent any further direction changes this frame.
     }
 
-    if ( event.key === "ArrowDown" ) {      // If you've pressed the down arrow...
+    if ( event.key == 'ArrowDown' ) {       // If you've pressed the down arrow...
         snakeDirection = 'S';               // ... change the snake's direction to S (for South)
         snakeAlreadyTurned = true;          // ... and prevent any further direction changes this frame.
     }
 
-    if ( event.key === "ArrowLeft" ) {      // If you've pressed the left arrow...
+    if ( event.key == 'ArrowLeft' ) {       // If you've pressed the left arrow...
         snakeDirection = 'W';               // ... change the snake's direction to W (for West)
         snakeAlreadyTurned = true;          // ... and prevent any further direction changes this frame.
     }
 
-    if ( event.key === "ArrowRight" ) {     // If you've pressed the right arrow...
+    if ( event.key == 'ArrowRight' ) {      // If you've pressed the right arrow...
         snakeDirection = 'E';               // ... change the snake's direction to E (for East)
         snakeAlreadyTurned = true;          // ... and prevent any further direction changes this frame.
     }

@@ -12,9 +12,9 @@ CSS Challenges: (styles.css)
 
 JavaScript Challenges: (script.js)
 
-• Change the canvas max X and Y co-ordinates to match the new size.
-• Change the controls to be W, A, S, D. Visit http://keycode.info/ for help.
+• Change the canvas max X and Y coordinates to match the new size.
 • Change the start length of the snake to be 20 segments.
+• Change the controls to be W, A, S, D. Visit http://keycode.info/ for help.
 • Increase the frequency of apples appearing to once every half second.
 • Increase the snake's movement speed (game frame rate) to 10 per second.
 • Change the grid size to be 10 pixels (why do the apple vanish!?)
