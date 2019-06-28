@@ -26,4 +26,4 @@ Take home extension challenges:
 • Make the canvas fill the whole web browser window and resize with it
 • Add mouse controls
 • Add walls (either random or a fixed pattern)
-• Change the plain coloured regtangles to be images, research 'canvas drawImage'
+• Change the plain coloured rectangles to be images, research 'canvas drawImage'
