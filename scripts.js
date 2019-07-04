@@ -28,6 +28,7 @@ function pageLoad() {
 
     document.addEventListener('keydown', checkKeyPress);        // Assign the function 'checkKeyPress'
                                                                 // to handle when a key is pressed.
+    document.addEventListener('click', checkKeyPress);
 
     drawCanvas();                       // Draw the canvas (playing field) for the first time
 
@@ -146,21 +147,29 @@ function checkKeyPress(event) {
     if ( event.key == 'ArrowUp' ) {         // If you've pressed the up arrow...
         snakeDirection = 'N';               // ... change the snake's direction to N (for North)
         snakeAlreadyTurned = true;          // ... and prevent any further direction changes this frame.
-    }
-
-    if ( event.key == 'ArrowDown' ) {       // If you've pressed the down arrow...
+    } else if ( event.key == 'ArrowDown' ) {       // If you've pressed the down arrow...
         snakeDirection = 'S';               // ... change the snake's direction to S (for South)
         snakeAlreadyTurned = true;          // ... and prevent any further direction changes this frame.
-    }
-
-    if ( event.key == 'ArrowLeft' ) {       // If you've pressed the left arrow...
+    } else if ( event.key == 'ArrowLeft' ) {       // If you've pressed the left arrow...
         snakeDirection = 'W';               // ... change the snake's direction to W (for West)
         snakeAlreadyTurned = true;          // ... and prevent any further direction changes this frame.
-    }
-
-    if ( event.key == 'ArrowRight' ) {      // If you've pressed the right arrow...
+    } else if ( event.key == 'ArrowRight' ) {      // If you've pressed the right arrow...
         snakeDirection = 'E';               // ... change the snake's direction to E (for East)
         snakeAlreadyTurned = true;          // ... and prevent any further direction changes this frame.
+    } else {
+        if ( snakeDirection == 'S' ) {      // This whole else section turns the snake when the mouse is clicked.
+            snakeDirection = 'E';
+            snakeAlreadyTurned = true;
+        } else if ( snakeDirection == 'E' ) {
+            snakeDirection = 'N';
+            snakeAlreadyTurned = true;
+        } else if ( snakeDirection == 'N' ) {
+            snakeDirection = 'W';
+            snakeAlreadyTurned = true;
+        } else if ( snakeDirection == 'W' ) {
+            snakeDirection = 'S';
+            snakeAlreadyTurned = true;
+        }
     }
 
 }
